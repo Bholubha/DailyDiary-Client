@@ -8,37 +8,33 @@ import Home from './components/Home';
 import Insertion from './components/Insertion';
 import Show from './components/Show'
 
-const  App = ()=> {
+const App = () => {
   const [username, setusername] = useState("bhai");
-  const defineUser = (name)=>{
+  const defineUser = (name) => {
     setusername(name);
 
   }
-  
- 
-return(
+
+  return (
     <>
-    <Navbar/>
-    <div className=''> <img src="/background.jpg" alt="" className='w-full ' /></div>
-    
+      <Navbar />
+      <div className=''> <img src="/background.jpg" alt="" className='w-full ' /></div>
 
 
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/login" element={<Login defineUser={defineUser} />} />
+        <Route path="/register" element={<Register />} />
+        <Route path="/menubar" element={<Menubar />} />
+        <Route path="/menubar/insert" element={<Insertion username={username} />} />
+        <Route path="/menubar/show" element={<Show username={username} />} />
 
-
-    <Routes>
-         <Route path = "/" element = {<Home/>}/>
-        <Route path="/login" element={ <Login defineUser = {defineUser}/> } />
-        <Route path="/register" element={ <Register/> } />
-        <Route path="/menubar" element={ <Menubar /> } />
-        <Route path="/menubar/insert" element={ <Insertion  username = {username} /> } />
-        <Route path="/menubar/show" element={ <Show  username = {username} /> } />
-     
       </Routes>
-    
+
     </>
-);
-   
-  
+  );
+
+
 
 }
 
