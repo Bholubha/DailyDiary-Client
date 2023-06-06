@@ -9,7 +9,7 @@ function Show({username}) {
 
 useEffect(() => {
    console.log(username)
-    axios.post("http://localhost:8000/memory/show",{username})
+    axios.post("https://memory-server-five.vercel.app/memory/show",{username})
     .then((response)=>{
           setImage(response.data.img);
     })

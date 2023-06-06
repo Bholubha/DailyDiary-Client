@@ -26,7 +26,7 @@ const Insertion = ({username})=> {
 
        console.log(image);
 
-       axios.post("http://localhost:8000/memory/upload",{username,title,description,image})
+       axios.post("https://memory-server-five.vercel.app/memory/upload",{username,title,description,image})
        .then((response) => {
          
          console.log("memory upload successfully");
