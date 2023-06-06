@@ -1,9 +1,11 @@
 import {React, useState,useEffect} from 'react'
 import axios from 'axios'
+import '../ImageGallery.css'
+
 
 function Show({username}) {
 
-    const [image, setImage] = useState([]);
+    const [images, setImage] = useState([]);
 
 useEffect(() => {
    console.log(username)
@@ -21,10 +23,14 @@ useEffect(() => {
     <div >
         <div className='absolute top-40 w-full'>
 
-       <div className='relative flex justify-center w-full '>
-    {
-        image.map((post)=><img className='w-[20%] h-[20%] px-2' src={post.image} alt="memory" />)
-    }
+       <div className="image-gallery">
+       {images.map((image) => (
+        <div className="image-container" key={image.title}>
+          <img src={image.image} alt={image.title} className="image" />
+          <div className="image-title">{image.title}</div>
+          <div className="image-description">{image.description}</div>
+        </div>
+      ))}
       
 
       </div>

@@ -6,7 +6,7 @@ import Register from './components/Register';
 import { Routes, Route } from "react-router-dom"
 import Home from './components/Home';
 import Insertion from './components/Insertion';
-import Show from './components/Show'
+import Show from './components/Show';
 
 const App = () => {
   const [username, setusername] = useState("bhai");
@@ -28,7 +28,7 @@ const App = () => {
         <Route path="/menubar" element={<Menubar />} />
         <Route path="/menubar/insert" element={<Insertion username={username} />} />
         <Route path="/menubar/show" element={<Show username={username} />} />
-
+        
       </Routes>
 
     </>

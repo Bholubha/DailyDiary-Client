@@ -33,7 +33,7 @@ const Insertion = ({username})=> {
          
          setDi("");
          setTitle("");
-       
+         
          
        })
        .catch(function (error) {

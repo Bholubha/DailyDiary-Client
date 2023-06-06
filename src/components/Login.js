@@ -28,7 +28,7 @@ const Login = ({defineUser}) => {
         setstatuscode(1);
         console.log("verified");
         setTimeout(() => {
-          navigate("../menubar")
+          navigate("../menubar");
         }, 1000);
 
      }else{
