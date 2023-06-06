@@ -20,7 +20,7 @@ const Register = () => {
 
   const createPost = async () => {
     console.log("Hello");
-    axios.post("https://memory-server-five.vercel.app/user/register", { username, password })
+    axios.post("https://memory-server-pi.vercel.app/user/register", { username, password })
       .then((response) => {
 
         console.log(response)
