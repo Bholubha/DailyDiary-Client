@@ -13,7 +13,7 @@ function Home() {
             <div className="px-3 py-4">
             <span>
               <Link to="register">
-                <h1 className='font-mono  text-white text-4xl text-center'>Sign UP</h1>
+                <h1 className='font-mono  text-white text-4xl text-center'>Sign UP Here</h1>
               </Link>
             </span>
               </div>
