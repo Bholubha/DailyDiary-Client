@@ -5,7 +5,7 @@ const  Navbar = ()=> {
     <div className='absolute w-full z-10'>
     <div className="fixed w-full flex justify-between items-center p-1 bg-gray-600 shadow-md ">
     <div className="">
-      <img src={process.env.PUBLIC_URL + '/logo.png'} alt="Logo" className='h-20' />
+      <img src={process.env.PUBLIC_URL + '/logo.svg'} alt="Logo" className='h-20' />
     </div>
     <div >
       <ul className='flex m-0 p-0 text-orange-600'>
