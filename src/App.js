@@ -7,6 +7,7 @@ import { Routes, Route } from "react-router-dom"
 import Home from './components/Home';
 import Insertion from './components/Insertion';
 import Show from './components/Show';
+import First from './components/First';
 
 const App = () => {
   const [username, setusername] = useState("bhai");
@@ -17,12 +18,12 @@ const App = () => {
 
   return (
     <>
-      <Navbar />
-      <div className=''> <img src="/background.jpg" alt="" className='w-full ' /></div>
-
-
+      {/* <Navbar /> */}
+      {/* <div className=''> <img src="/background.jpg" alt="" className='w-full ' /></div> */}
+     
       <Routes>
-        <Route path="/" element={<Home />} />
+        <Route path="/" element={<First />} />
+        <Route path="/home" element={<Home />} />
         <Route path="/login" element={<Login defineUser={defineUser} />} />
         <Route path="/register" element={<Register />} />
         <Route path="/menubar" element={<Menubar />} />

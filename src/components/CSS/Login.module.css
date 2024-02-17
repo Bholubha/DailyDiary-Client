@@ -1,0 +1,112 @@
+.Back {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: #b4e1c0
+}
+
+.container{
+background-color: white;
+height: 320px;
+width: 30%;
+margin: 25vh auto;
+box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+border-radius: 10px;
+display: flex;
+flex-direction: column;
+align-items: center;
+
+}
+
+.header{
+    margin-top: 20px;
+    width:100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.text{
+    font-size:30px ;
+    font-weight: 700;
+    color:#23c24d;
+
+}
+
+.underline{
+    margin-top: 5px;
+    width: 60px;
+    height :5px;
+    background-color: #23c24d;
+    border-radius: 6px;
+}
+
+.inputs{
+    margin-top: 20px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.input{
+    background-color: #bec8c0;
+    display: flex;
+    align-items: center;
+    border-radius: 6px;
+    height: 43px;
+    width: 70%;
+   
+}
+
+.input input{
+    background-color: transparent;
+    outline: none;
+    border: none;
+    margin: 0px 0%;
+    height: 20px;
+    width: 80%;
+}
+
+.icon{
+ margin: 0px 10px;
+}
+
+.forgetP{
+    margin: 13px;
+}
+.forgetP span{
+    
+    margin-left: 7px;
+    font-weight: 500;
+    font-size: 18px;
+    color: #23c24d;
+    cursor: pointer;   
+}
+
+.forgetP span:hover{
+ text-decoration: underline;
+ 
+}
+
+
+.submit{
+    background-color: #23c24d;
+    font-size: 16px;
+    font-weight: 700;
+    height: 40px;
+    border-radius: 20px;
+    width: 150px;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+
