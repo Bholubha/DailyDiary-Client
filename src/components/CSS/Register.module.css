@@ -1,3 +1,5 @@
+
+
 .Back {
     position: absolute;
     top: 0;
@@ -27,13 +29,15 @@ align-items: center;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    
+  
+    /* font-family: Virgil; */
 }
 
 .text{
     font-size:30px ;
     font-weight: 700;
     color:#23c24d;
+   
 
 }
 
@@ -70,12 +74,19 @@ align-items: center;
     outline: none;
     border: none;
     margin: 0px 0%;
-    height: 20px;
+    height: 22px;
     width: 80%;
 }
 
 .icon{
  margin: 0px 10px;
+}
+
+.User{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .Email{
@@ -122,7 +133,8 @@ align-items: center;
 
 
 .submit{
-    margin: 23px;
+    margin-top: 23px;
+    margin-bottom: 10px;
     background-color: #23c24d;
     font-size: 16px;
     font-weight: 700;
@@ -136,4 +148,20 @@ align-items: center;
     cursor: pointer;
 }
 
+.verify{
+    margin-top: 10px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 600;
+    color: #2348c2;
+}
 
+.verify1{
+    margin: 5px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 600;
+    color: #2348c2;
+}
+
+.fakeForm{
+    display: none;
+}

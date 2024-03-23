@@ -8,7 +8,8 @@ import Home from './components/Home';
 import Insertion from './components/Insertion';
 import Show from './components/Show';
 import First from './components/First';
-
+import ResetPassword from './components/ResetPassword'
+// import './App.css'
 const App = () => {
   const [username, setusername] = useState("bhai");
   const defineUser = (name) => {
@@ -24,6 +25,7 @@ const App = () => {
       <Routes>
         <Route path="/" element={<First />} />
         <Route path="/home" element={<Home />} />
+        <Route path="/resetpassword" element={<ResetPassword />} />
         <Route path="/login" element={<Login defineUser={defineUser} />} />
         <Route path="/register" element={<Register />} />
         <Route path="/menubar" element={<Menubar />} />

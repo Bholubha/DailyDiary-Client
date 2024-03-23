@@ -29,9 +29,9 @@ function First() {
         </div>
 
         <div style={{ marginTop: "10px", display: "inline-block" }}>
-          <svg xmlns="http://www.w3.org/2000/svg" width="320" height="60" viewBox="0 0 320 60">
+          <svg xmlns="http://www.w3.org/2000/svg" width="250" height="60" viewBox="0 0 250 60">
             <text x="10" y="40" font-family="Shrikhand, cursive" font-size="40" fill="#6ded8f" letter-spacing="2">
-              DailyDiary.com
+              Daily-Diary
             </text>
           </svg>
         </div>

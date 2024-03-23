@@ -3,74 +3,138 @@ import { useState, useEffect } from 'react';
 import { useNavigate } from "react-router-dom";
 import axios from 'axios';
 import style from './CSS/Login.module.css'
+import emailjs from '@emailjs/browser';
 
-    const Login = ({ defineUser }) => {
+const Login = ({ defineUser }) => {
 
-      const [username, setusername] = useState("");
-      const [password, setpassword] = useState("");
-      const [statuscode, setstatuscode] = useState(0);
-      const navigate = useNavigate();
+  const [email, setEmail] = useState("");
+  const [password, setpassword] = useState("");
+  const [statuscode, setstatuscode] = useState(-1);
+  const navigate = useNavigate();
+  const [randomNumber, setRandomNumber] = useState(0);
 
 
-      useEffect(() => {
-        setTimeout(() => {
+
+  const createPost = async () => {
+    console.log(email)
+    axios.post("http://localhost:8000/user/login", { email, password })
+      .then((response) => {
+       
+        if (response.data.data.verification) {
+
+          setstatuscode(1);
+          console.log("verified");
+          setTimeout(() => {
+            navigate("../menubar");
+          }, 1500);
+
+        } else {
+
+          console.log("not verified");
           setstatuscode(0);
-        }, 2000);
-      }, [statuscode])
+          setTimeout(() => {
+            setstatuscode(-1)
+            const inputs = document.getElementsByClassName('Field')
+            inputs[0].value = ""
+            inputs[1].value = "";
+            setpassword("");
+            setEmail("")
+          }, 1000);
 
 
-      const createPost = () => {
-        axios.post("http://localhost:8000/user/login", { username, password })
-          .then((response) => {
+        }
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
+  }
 
-            if (response.data.verification) {
-              defineUser(username);
-              setstatuscode(1);
-              console.log("verified");
-              setTimeout(() => {
-                navigate("../menubar");
-              }, 1000);
+  const generateRandomNumber = () => {
+      
+    const sixDigitNumber = Math.floor(100000 + Math.random() * 900000);
+    console.log(sixDigitNumber)
+    setRandomNumber(sixDigitNumber);
+    
+  }
 
-            } else {
-              defineUser(username);
-              console.log("not verified");
-              setstatuscode(2);
-              setpassword("");
-              setusername("");
-            }
-          })
-          .catch(function (error) {
-            console.log(error);
-          });
+  const Navigate = ()=>{
+    navigate("../resetpassword");
+  }
+
+  const sendMail = async () => {
+
+    generateRandomNumber();
+
+    const form = {
+      to_name: 'bhautik',
+      email: 'bhautiksinhvala333@gmail.com',
+      code : randomNumber,
+      
+    }
+    console.log(randomNumber)
+    console.log({randomNumber})
+
+    Object.keys(form).forEach(key => {
+      const element = document.getElementById(key);
+      if (element) {
+        console.log(key)
+        console.log(form[key])
+        element.value = form[key];
       }
+    });
+    
+
+    emailjs.sendForm('service_95pmtu6', 'template_me0ayk5', document.getElementById('fakeForm'), 'vQ-Q-raQ01oZeqYKP')
+      .then((result) => {
+        console.log("successs")
+      }, (error) => {
+        // show the user an error
+      });
+  }
 
   return (
     <div className={style.Back}>
-    <div className={style.container}>
-      <div className={style.header}>
-        <div className={style.text}>Log In</div>
-        <div className={style.underline}></div>
-      </div>
 
-      <div className={style.inputs}>
-        <div className={style.input}>
-          <div className={style.icon}>
-            <i className="fa-solid fa-envelope"></i>
-          </div>
-          <input type="email" placeholder='Email' />
+      <div className={style.container}>
+        <div className={style.header}>
+          <div className={style.text}>Log In</div>
+          <div className={style.underline}></div>
         </div>
-        <div className={style.input}>
-          <div className={style.icon}>
-            <i className="fa-solid fa-lock"></i>
-          </div>
-          <input type="password" placeholder='Password' />
-        </div>
-      </div>
 
-      <div className={style.forgetP}> Forgot Password <span> Click here</span></div>
-      <div className={style.submit}>Log In</div>
+        <div className={style.inputs}>
+
+          <div className={style.input}>
+            <div className={style.icon}>
+              <i className="fa-solid fa-envelope"></i>
+            </div>
+            <input className="Field" type="email" onChange={(e) => { setEmail(e.target.value) }} placeholder='Email' />
+          </div>
+
+          <div className={style.input}>
+            <div className={style.icon}>
+              <i className="fa-solid fa-lock"></i>
+            </div>
+            <input className="Field" type="password" onChange={(e) => { setpassword(e.target.value) }} placeholder='Password' />
+          </div>
+
+        </div>
+
+        <div className={style.forgetP}> Forgot Password <span onClick={Navigate}> Click here</span></div>
+
+        {/* Fake Form for email sending purpose */}
+          <form className={style.fakeForm} id='fakeForm' action="">
+
+            <input type="text" id="to_name" name="to_name" />
+            <input type="email" id="email" name="email" />
+            <input type="text" name="code" id="code" />
+
+          </form>
+
+        <div className={style.submit} onClick={createPost}>Log In</div>
+        {statuscode === 0 && <div className={style.einput}>Entered wrong password!</div>}
+        {statuscode === 1 && <div className={style.sinput}> Successfully Login...</div>}
+      </div>
     </div>
-  </div>
 
   )
 }

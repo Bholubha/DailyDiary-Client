@@ -69,7 +69,7 @@ align-items: center;
     outline: none;
     border: none;
     margin: 0px 0%;
-    height: 20px;
+    height: 22px;
     width: 80%;
 }
 
@@ -107,6 +107,20 @@ align-items: center;
     justify-content: center;
     align-items: center;
     cursor: pointer;
+}
+
+.einput{
+    font-size: 13px;
+    color:red
+}
+
+.sinput{
+    font-size: 13px;
+    color: green;
+}
+
+.fakeForm{
+    display: none;
 }
 
 

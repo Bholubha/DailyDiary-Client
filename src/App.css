@@ -1,6 +1,9 @@
 .App {
-  text-align: center;
-  background-color: #87e6a0;
+  background-image: url('./components/CSS/background.jpg') no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
 }
 
 .App-logo {
