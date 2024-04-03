@@ -23,7 +23,7 @@ const App = () => {
       {/* <div className=''> <img src="/background.jpg" alt="" className='w-full ' /></div> */}
      
       <Routes>
-        <Route path="/" element={<First />} />
+        <Route path="/" element={<Menubar />} />
         <Route path="/home" element={<Home />} />
         <Route path="/resetpassword" element={<ResetPassword />} />
         <Route path="/login" element={<Login defineUser={defineUser} />} />
