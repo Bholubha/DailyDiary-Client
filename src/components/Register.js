@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import style from './CSS/Register.module.css'
-import '@fortawesome/fontawesome-free/css/all.css';
+
 import * as EmailValidator from 'email-validator';
 import { useNavigate } from "react-router-dom";
 import axios from 'axios';
