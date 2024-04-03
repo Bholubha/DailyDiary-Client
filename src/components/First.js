@@ -1,6 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import('https://fonts.googleapis.com/css2?family=Shrikhand&display=swap')
+// import('https://fonts.googleapis.com/css2?family=Shrikhand&display=swap')
 function First() {
   return (
 

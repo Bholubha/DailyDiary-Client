@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 import style from './CSS/Menubar.module.css'
 import InsertDay from './InsertDay'
-import('https://fonts.googleapis.com/css2?family=Shrikhand&display=swap')
+// import('https://fonts.googleapis.com/css2?family=Shrikhand&display=swap')
 const Menubar = () => {
 
   const [selected, setSelected] = useState("1");
