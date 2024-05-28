@@ -1,9 +1,11 @@
 @import url('https://fonts.googleapis.com/css?family=Protest+Riot&display=swap');
 
+body{
+  margin-bottom: 20px;
+}
 
 .container {
-  margin: 4vh auto;
-  
+  margin: 6vh auto;
   background-color: rgb(78, 233, 145);
   border-radius: 10px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
@@ -15,12 +17,31 @@
 
 }
 
+.successMessage{
+  position: absolute;
+  top : 10%;
+  left: 40%;
+  font-family: 'Protest Riot', serif; 
+  font-weight: 400;
+  font-size: 20px;
+  color: rgb(70, 171, 70);
+}
+
 .container p{
+
     font-family: 'Protest Riot', serif; 
     font-weight: 400;
     font-size: 20px;
     color: black;
 }
+
+/* .dateTitle{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+} */
+
+
 
 .inputs{
     margin-top: 1vh;
@@ -75,16 +96,21 @@
     border: 2px dashed white;
 }
 
-.uploadA i{
+.uploadA img{
   position: absolute;
   top: 50%;
   left: 50%;
-  margin-left: -10px;
+  margin-left: -20px;
+  margin-top: -20px;
 }
 
-.uploadA i:hover{
+.uploadA img:hover{
   cursor: pointer;
 }
+
+/* .uploadA img{
+  margin: 40% auto;
+} */
 
 
 
@@ -123,6 +149,8 @@ input[type="file"] {
   border-radius: 10px;
 }
 
-
-
+.date input{
+  width: 10vw;
+  text-align: center;
+}
 

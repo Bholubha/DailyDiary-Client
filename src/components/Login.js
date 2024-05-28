@@ -5,7 +5,7 @@ import axios from 'axios';
 import style from './CSS/Login.module.css'
 import emailjs from '@emailjs/browser';
 
-const Login = ({ defineUser }) => {
+const Login = ({defineUser}) => {
 
   const [email, setEmail] = useState("");
   const [password, setpassword] = useState("");
@@ -16,12 +16,13 @@ const Login = ({ defineUser }) => {
 
 
   const createPost = async () => {
+    console.log("hello win ")
     console.log(email)
-    axios.post("http://localhost:8000/user/login", { email, password })
+    axios.post("https://daily-diary-backend.up.railway.app/user/login", { email, password })
       .then((response) => {
        
-        if (response.data.data.verification) {
-
+        if (response.data.verification) {
+          defineUser(email);
           setstatuscode(1);
           console.log("verified");
           setTimeout(() => {

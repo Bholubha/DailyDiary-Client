@@ -63,12 +63,12 @@
 
 
     const Reset = async () => {
-
+      console.log("in reset")
       setShowVerification(1);
       setShowPw(1);
 
-      const response = await axios.post("http://localhost:8000/user/verify", { email });
-      setToName(response.data.username);
+      // const response = await axios.post("http://localhost:8000/user/verify", { email });
+      setToName("bhautik");
       var sixDigitNumber = Math.floor(100000 + Math.random() * 900000);
       setRandomNumber(sixDigitNumber)
 
@@ -81,7 +81,7 @@
     }, [randomNumber]);
 
     const Sendmail = async () => {
-      
+      console.log("in sendmail")
       const form = {
         to_name: toName,
         email: email,
@@ -101,6 +101,7 @@
           console.log("successs")
         }, (error) => {
           // show the user an error
+          console.log("ERRORR")
         });
     }
 

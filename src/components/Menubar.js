@@ -2,9 +2,13 @@ import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 import style from './CSS/Menubar.module.css'
 import InsertDay from './InsertDay'
-// import('https://fonts.googleapis.com/css2?family=Shrikhand&display=swap')
-const Menubar = () => {
+import Show from './Show'
 
+import { useNavigate } from "react-router-dom";
+
+// import('https://fonts.googleapis.com/css2?family=Shrikhand&display=swap')
+const Menubar = ({email}) => {
+  const navigate = useNavigate();
   const [selected, setSelected] = useState("1");
   const [prevSelected, setPrevSelected] = useState("1")
 
@@ -25,6 +29,10 @@ const Menubar = () => {
     setSelected(prevSelected)
   };
 
+  const navigateLogin = (dest)=>{
+    navigate(dest);
+  }
+
   return (
     <div className={style.Root}>
       <div className={style.header}>
@@ -38,7 +46,7 @@ const Menubar = () => {
             </svg>
           </div>
           <div className={style.menu}>
-
+          <div className={style.Left}>
             {selected === "1" ? <div className={style.box1}>
               <h1 id="1" onClick={selectItem}  >Diary</h1>
               <div className={style.tapezoid}></div>
@@ -79,6 +87,22 @@ const Menubar = () => {
                  >Contact</h1>
                 <div className={style.tapezoid}></div>
               </div>}
+              </div>
+
+              <div className={style.Right}>
+              <div className={style.box}>
+                <h1 id="5" onClick={selectItem} 
+                 >Login</h1>
+              </div>
+              <div className={style.vLine}>
+
+              </div>
+              <div className={style.box}>
+                <h1 id="6" onClick={selectItem} 
+                 >Register</h1>
+              </div>
+              </div>
+            
 
 
           </div>
@@ -86,8 +110,12 @@ const Menubar = () => {
         <div className={style.container}></div>
       </div>
       <div className={style.main}>
-            {selected==="1" && <InsertDay />}
+            {selected==="1" && <Show email={email}/>}
+            {selected==="2" && <InsertDay email={email}/>}
+            {selected==="5" && navigateLogin("../login")}
+            {selected==="6" && navigateLogin("../register")}
       </div>
+      <div style={{marginTop:"10px"}}>&#x200B;</div>
     </div>
   )
 }

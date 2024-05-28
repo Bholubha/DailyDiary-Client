@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 function First() {
   return (
 
-    <div style={{ position: "absolute", top: 0, bottom: 0, left: 0, right: 0, backgroundColor: "#cae8d2" }}>
+    <div style={{ position: "absolute", top: 0, bottom: 0, left: 0, right: 0, backgroundColor: "#fff", zIndex:-1}}>
 
       <div style={{
         backgroundColor: "white",
@@ -16,6 +16,7 @@ function First() {
         display: "flex",
         flexDirection: "column",
         alignItems: "center", // Center inner elements horizontally
+        
 
       }}>
 
@@ -43,12 +44,12 @@ function First() {
         </div>
 
         <div style={{width:'40%', margin: "30px 0" ,display:'flex',justifyContent:'space-evenly'}}>
-          <Link to="login">
+          <Link to="../login">
             <button style={{fontWeight:'700', backgroundColor: '#4CAF50', color: '#fff', padding: '10px 20px', border: 'none', borderRadius: '5px', cursor: 'pointer' }}>Log in</button>
           </Link>
 
 
-          <Link to="register">
+          <Link to="../register">
             <button style={{ fontWeight:'700',backgroundColor: '#4CAF50', color: '#fff', padding: '10px 20px', border: 'none', borderRadius: '5px', cursor: 'pointer', marginLeft: '10px' }}>Sign Up</button>
           </Link>
 

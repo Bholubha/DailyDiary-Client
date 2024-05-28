@@ -11,9 +11,9 @@ import First from './components/First';
 import ResetPassword from './components/ResetPassword'
 // import './App.css'
 const App = () => {
-  const [username, setusername] = useState("bhai");
-  const defineUser = (name) => {
-    setusername(name);
+  const [email, setEmail] = useState("");
+  const defineUser = (email) => {
+    setEmail(email);
 
   }
 
@@ -28,9 +28,9 @@ const App = () => {
         <Route path="/resetpassword" element={<ResetPassword />} />
         <Route path="/login" element={<Login defineUser={defineUser} />} />
         <Route path="/register" element={<Register />} />
-        <Route path="/menubar" element={<Menubar />} />
-        <Route path="/menubar/insert" element={<Insertion username={username} />} />
-        <Route path="/menubar/show" element={<Show username={username} />} />
+        <Route path="/menubar" element={<Menubar email={email} />} />
+        <Route path="/menubar/insert" element={<Insertion  />} />
+        <Route path="/menubar/show" element={<Show />} />
         
       </Routes>
 

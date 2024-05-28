@@ -4,7 +4,8 @@
     bottom: 0;
     left: 0;
     right: 0;
-    background-color: #b4e1c0
+    background-color: #b4e1c0;
+    z-index: -1;
 }
 
 .container{

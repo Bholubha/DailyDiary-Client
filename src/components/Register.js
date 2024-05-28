@@ -48,7 +48,7 @@ function Register() {
   const registerUser = async ()=>{
     
     
-      axios.post("http://localhost:8000/user/register", { username, email,password })
+      axios.post("https://daily-diary-backend.up.railway.app/user/register", { username, email,password })
         .then((response) => {
           console.log(response)
           setSignStatus(1)
